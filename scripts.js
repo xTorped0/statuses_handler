@@ -45,20 +45,21 @@ const postgresScript = () => {
 }
 
 const autorunScript = () => {
-	// const elem = document.querySelector('.onStartup')
+	const elem = document.querySelector('.onStartup')
 	
-	// elem.onclick = () => {
-	// 	// app.setLogitItemSettings({
-	// 	// 	openAtLogin: true
-	// 	// })
-	// 	let autoLaunch = new AutoLaunch({
-	// 		name: 'handling services',
-	// 		path: `${__dirname}.exe`,
-	// 	});
-	// 	autoLaunch.isEnabled().then((isEnabled) => {
-	// 		if (!isEnabled) autoLaunch.enable();
-	// 	});
-	// }
+	elem.onclick = () => {
+		// app.setLogitItemSettings({
+		// 	openAtLogin: true
+		// })
+		console.log( `${__filename}`);
+		// let autoLaunch = new AutoLaunch({
+		// 	name: 'handling services',
+		// 	path: `${__dirname}.exe`,
+		// });
+		// autoLaunch.isEnabled().then((isEnabled) => {
+		// 	if (!isEnabled) autoLaunch.enable();
+		// });
+	}
 }
 
 const ipAdressesScript = () => {

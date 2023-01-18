@@ -3,7 +3,7 @@ const { timeScript, postgresScript, autorunScript, ipAdressesScript } = require(
 window.addEventListener('DOMContentLoaded', () => {
   timeScript()
   postgresScript()
-  autorunScript()
+  // autorunScript()
   ipAdressesScript()
   // const replaceText = (selector, text) => {
   //   const element = document.getElementById(selector)

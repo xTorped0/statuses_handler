@@ -1,5 +1,5 @@
 {
-  "name": "electron",
+  "name": "service-handlers",
   "version": "1.0.0",
   "description": "application for handling services statuses",
   "main": "main.js",
