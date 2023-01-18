@@ -1,8 +1,8 @@
-const { timeScript, prostirdScript, autorunScript, ipAdressesScript } = require('./scripts.js') 
+const { timeScript, postgresScript, autorunScript, ipAdressesScript } = require('./scripts.js') 
 
 window.addEventListener('DOMContentLoaded', () => {
   timeScript()
-  prostirdScript()
+  postgresScript()
   autorunScript()
   ipAdressesScript()
   // const replaceText = (selector, text) => {

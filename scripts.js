@@ -1,8 +1,9 @@
 // const { BrowserWindow } = require('electron') ;
-const AutoLaunch = require("auto-launch");
-const { exec } = require("child_process");
-const path = require("path");
 const { networkInterfaces } = require('os');
+const { exec, spawn } = require("child_process");
+
+const AutoLaunch = require("auto-launch");
+const path = require("path");
 
 const timeScript = () => {
 	const timeElem = document.querySelector('.time')
@@ -20,12 +21,12 @@ const timeScript = () => {
 	}, 1000)
 }
 
-const prostirdScript = () => {
+const postgresScript = () => {
 	const elem = document.querySelector('.prostird_controller')
 
 	const interval = setInterval(() => {
 		if (process.platform === 'linux') {
-			exec('systemctl status prostird', (error, stdout, stderr) => {
+			exec("systemctl status 'postgresql'", (error, stdout, stderr) => {
 				if (error) {
 						console.log(`error: ${error.message}`);
 						return;
@@ -35,10 +36,12 @@ const prostirdScript = () => {
 						return;
 				}
 				console.log(`stdout: ${stdout}`);
-				console.log(JSON.parse(stdout));
+				// console.log(JSON.parse(stdout));
 			});
+			
+			
 		}
-	}, 5000)
+	}, 1000)
 }
 
 const autorunScript = () => {
@@ -89,7 +92,7 @@ const ipAdressesScript = () => {
 	getAdresses();
 }
 
-module.exports = { timeScript, prostirdScript, autorunScript, ipAdressesScript }
+module.exports = { timeScript, postgresScript, autorunScript, ipAdressesScript }
 
 // const status = ''
 	// 	let command = 'ls -la' // "systemctl status prostird"
