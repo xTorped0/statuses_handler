@@ -59,9 +59,9 @@ const autorunScript = () => {
 }
 
 const ipAdressesScript = () => {
-	const elem = document.querySelector('.ipAddress')
+	const elem = document.querySelector('.ipAddress');
 
-	setInterval(() => {
+	const getAdresses = () => {
 		const nets = networkInterfaces();
 		const results ={};
 
@@ -82,7 +82,11 @@ const ipAdressesScript = () => {
 		elem.innerHTML = Object.entries(results).map(([key, value]) => {
 			return `${key}: ${value.join('; ')}`
 		}).join('<br>');
-	}, 5000)
+	};
+
+	setInterval(getAdresses, 5000);
+
+	getAdresses();
 }
 
 module.exports = { timeScript, prostirdScript, autorunScript, ipAdressesScript }
